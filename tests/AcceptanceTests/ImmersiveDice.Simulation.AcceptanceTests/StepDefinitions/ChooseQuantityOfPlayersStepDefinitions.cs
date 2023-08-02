@@ -3,18 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow.Infrastructure;
 
 namespace ImmersiveDice.Simulation.AcceptanceTests.StepDefinitions
 {
     [Binding]
     public sealed class ChooseQuantityOfPlayersStepDefinitions
     {
+        private readonly ISpecFlowOutputHelper _OutputHelper;
+
+        public ChooseQuantityOfPlayersStepDefinitions(ISpecFlowOutputHelper outputHelper)
+        {
+            _OutputHelper = outputHelper;
+        }
+
         [Given(@"a new simulation is being created")]
         public void GivenANewSimulationIsBeingCreated()
         {
             //TODO: implement arrange (precondition) logic
 
             throw new PendingStepException();
+
+            _OutputHelper.WriteLine($"A new simulation is being created");
         }
 
         [Given("the number for the quantity of players is (.*)")]
@@ -23,14 +33,18 @@ namespace ImmersiveDice.Simulation.AcceptanceTests.StepDefinitions
             //TODO: implement arrange (precondition) logic
 
             throw new PendingStepException();
+
+            _OutputHelper.WriteLine($"the number for the quantity of players is {number}");
         }
 
         [Given("(.*) is within (.*)")]
-        public void GivenTheQuantityOfPlayersIsWithin(int number, Range range)
+        public void GivenTheQuantityOfPlayersIsWithin(int number, string range)
         {
             //TODO: implement arrange (precondition) logic
 
             throw new PendingStepException();
+
+            _OutputHelper.WriteLine($"{number} players is within the allowed range");
         }
 
         [When("the simulation creation is confirmed")]
@@ -39,6 +53,8 @@ namespace ImmersiveDice.Simulation.AcceptanceTests.StepDefinitions
             //TODO: implement act (action) logic
 
             throw new PendingStepException();
+
+            _OutputHelper.WriteLine($"the simulation creation is confirmed");
         }
 
         [Then("the quantity of players in the simulation configuration should be (.*)")]
@@ -47,6 +63,8 @@ namespace ImmersiveDice.Simulation.AcceptanceTests.StepDefinitions
             //TODO: implement assert (verification) logic
 
             throw new PendingStepException();
+
+            _OutputHelper.WriteLine($"the quantity of players in the simulation configuration is {result}");
         }        
     }
 }
