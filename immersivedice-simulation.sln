@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DB50FDB0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImmersiveDice.Simulation.AcceptanceTests", "tests\AcceptanceTests\ImmersiveDice.Simulation.AcceptanceTests\ImmersiveDice.Simulation.AcceptanceTests.csproj", "{E0A150D4-511C-4283-B506-BA43EF308D68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImmersiveDice.Simulation.Ubiquity.NeonArena.UnitTests", "tests\UnitTests\ImmersiveDice.Simulation.Ubiquity.NeonArena.UnitTests\ImmersiveDice.Simulation.Ubiquity.NeonArena.UnitTests.csproj", "{F133BEF6-0CEF-4EEC-896A-98E898912EAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{E0A150D4-511C-4283-B506-BA43EF308D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0A150D4-511C-4283-B506-BA43EF308D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0A150D4-511C-4283-B506-BA43EF308D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F133BEF6-0CEF-4EEC-896A-98E898912EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F133BEF6-0CEF-4EEC-896A-98E898912EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F133BEF6-0CEF-4EEC-896A-98E898912EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F133BEF6-0CEF-4EEC-896A-98E898912EAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{113CE141-6836-4C5B-8729-A6E18E3C5F16} = {6E3E00E3-C8D8-40A7-9F1C-DCE01D81C96F}
 		{E0A150D4-511C-4283-B506-BA43EF308D68} = {DB50FDB0-C60D-4DB8-B07B-97D3E2D40098}
+		{F133BEF6-0CEF-4EEC-896A-98E898912EAA} = {DB50FDB0-C60D-4DB8-B07B-97D3E2D40098}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F6CFAA7-788C-45FA-A6F7-CF557B0AC093}
