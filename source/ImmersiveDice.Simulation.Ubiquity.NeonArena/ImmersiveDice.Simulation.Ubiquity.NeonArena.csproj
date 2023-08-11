@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="ImmersiveDice.Simulation.Ubiquity.NeonArena.UnitTests" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<InternalsVisibleTo Include="ImmersiveDice.Simulation.AcceptanceTests" />
+  </ItemGroup>
+
 </Project>

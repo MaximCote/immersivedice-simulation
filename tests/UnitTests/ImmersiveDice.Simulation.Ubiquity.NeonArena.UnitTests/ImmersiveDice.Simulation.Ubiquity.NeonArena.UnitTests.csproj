@@ -20,6 +20,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+	<PackageReference Include="FluentAssertions" Version="6.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\source\ImmersiveDice.Simulation.Ubiquity.NeonArena\ImmersiveDice.Simulation.Ubiquity.NeonArena.csproj" />
   </ItemGroup>
 
 </Project>
