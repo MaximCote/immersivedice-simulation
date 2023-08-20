@@ -6,4 +6,10 @@ using System.Threading.Tasks;
 
 namespace ImmersiveDice.Simulation.Ubiquity.NeonArena.Common.Abstractions;
 
-internal abstract record class ValueObject;
+/// <summary>
+///     An abstraction to narrow the definition of a type.
+/// </summary>
+/// <remarks>
+///     Helpful in pattern matching to switch on object type.
+/// </remarks>
+public interface IValueObject { }

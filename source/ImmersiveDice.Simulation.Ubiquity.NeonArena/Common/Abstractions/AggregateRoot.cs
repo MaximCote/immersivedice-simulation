@@ -6,4 +6,7 @@ using System.Threading.Tasks;
 
 namespace ImmersiveDice.Simulation.Ubiquity.NeonArena.Common.Abstractions;
 
-internal abstract class AggregateRoot<TEntityId> : Entity<TEntityId> {}
+/// <summary>
+///     An abstraction to narrow the definition of a type.
+/// </summary>
+public abstract class AggregateRoot<TEntityId> : Entity<TEntityId> { }

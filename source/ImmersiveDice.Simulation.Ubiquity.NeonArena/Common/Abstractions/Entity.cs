@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ImmersiveDice.Simulation.Ubiquity.NeonArena.Common.Abstractions;
 
-internal abstract class Entity<TEntityId> : IEquatable<Entity<TEntityId>>
+/// <summary>
+///     An abstraction to narrow the definition of a type 
+///     and to provide type-specific functionality for determining equality of instances
+/// </summary>
+public abstract class Entity<TEntityId> : IEquatable<Entity<TEntityId>>
 {
     public abstract bool Equals(Entity<TEntityId>? other);
 }
