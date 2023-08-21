@@ -40,9 +40,9 @@ namespace ImmersiveDice.Simulation.AcceptanceTests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Choose Quantity Of Players", "As a\r\nGame designer\r\nI want to\r\nchoose the quantity of players for a play-through" +
-                    " simulation\r\nSo that I can\r\nevaluate the effect on simulated data when I input a" +
-                    " different quantity of players", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Choose Quantity Of Players", "As a\r\n\tGame designer\r\nI want to\r\n\tchoose the quantity of players for a play-throu" +
+                    "gh simulation\r\nSo that I can\r\n\tevaluate the effect on simulated data when I inpu" +
+                    "t a different quantity of players", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -123,16 +123,16 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 14
-testRunner.Given("the number for the quantity of players is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("the quantity of players chosen by the user is 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
-testRunner.And("2 is within the allowed range by the game rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the quantity is within the 2 and 6 quantity allowed by the game rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
 testRunner.When("the simulation creation is confirmed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
-testRunner.Then("the quantity of players in the simulation configuration should be 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the quantity of players in the simulation configuration should be 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

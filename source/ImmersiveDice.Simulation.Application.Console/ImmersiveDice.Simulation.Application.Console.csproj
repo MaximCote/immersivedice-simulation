@@ -1,17 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="ImmersiveDice.Simulation.Ubiquity.NeonArena.UnitTests" />
-  </ItemGroup>
-
-  <ItemGroup>
 	<InternalsVisibleTo Include="ImmersiveDice.Simulation.AcceptanceTests" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ImmersiveDice.Simulation.Ubiquity.NeonArena\ImmersiveDice.Simulation.Ubiquity.NeonArena.csproj" />
+  </ItemGroup>
+	
 </Project>
