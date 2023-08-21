@@ -1,4 +1,6 @@
 ﻿
+using ImmersiveDice.Simulation.Ubiquity.NeonArena.Common.Abstractions;
+
 namespace ImmersiveDice.Simulation.Ubiquity.NeonArena.Aggregates.PlaythroughSimulationAggregate.ValueObjects;
 
 /// <summary>
@@ -7,7 +9,7 @@ namespace ImmersiveDice.Simulation.Ubiquity.NeonArena.Aggregates.PlaythroughSimu
 /// <remarks>
 ///     This structure is meant to uniquely identify an instance of type <see cref="PlaythroughSimulation"/>.
 /// </remarks>
-public readonly struct PlaythroughSimulationId : IEquatable<PlaythroughSimulationId>
+public readonly struct PlaythroughSimulationId : IValueObject, IEquatable<PlaythroughSimulationId>
 {
     /// <summary>
     ///     Represent a unique identifier for an instance of <see cref="PlaythroughSimulation"/>.
