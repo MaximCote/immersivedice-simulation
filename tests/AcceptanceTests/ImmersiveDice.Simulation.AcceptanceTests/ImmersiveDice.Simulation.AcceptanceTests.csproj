@@ -20,4 +20,8 @@
     <Folder Include="Support\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\source\ImmersiveDice.Simulation.Ubiquity.NeonArena\ImmersiveDice.Simulation.Ubiquity.NeonArena.csproj" />
+  </ItemGroup>
+
 </Project>
