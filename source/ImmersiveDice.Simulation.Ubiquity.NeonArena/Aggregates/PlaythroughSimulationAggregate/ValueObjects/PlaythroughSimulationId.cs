@@ -31,7 +31,7 @@ public readonly struct PlaythroughSimulationId : IEquatable<PlaythroughSimulatio
     ///     the value of another specified <see langword="object"/> of the same type.
     /// </summary>
     /// <remarks>
-    ///     The objects are compared by their <see cref="Value"/> property.
+    ///     The objects are compared by their <see cref="Value"/>.
     /// </remarks>
     /// <param name="otherId"></param>
     /// <returns>

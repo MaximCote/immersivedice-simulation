@@ -27,7 +27,7 @@ public class SimulationConfigurationTests
     }
 
     [Fact]
-    public void QuantityOfPlayers_GivenArgumentMinQuantity_ShouldBeArgument()
+    public void QuantityOfPlayers_GivenArgumentIsMinQuantity_ShouldBeArgument()
     {
         //Given
         UInt16 argumentValue = SimulationConfiguration.MinQuantityOfPlayers;
@@ -39,7 +39,7 @@ public class SimulationConfigurationTests
     }
 
     [Fact]
-    public void QuantityOfPlayers_GivenArgumentMaxQuantity_ShouldBeArgument()
+    public void QuantityOfPlayers_GivenArgumentIsMaxQuantity_ShouldBeArgument()
     {
         //Given
         UInt16 argumentValue = SimulationConfiguration.MaxQuantityOfPlayers;
@@ -51,7 +51,7 @@ public class SimulationConfigurationTests
     }
 
     [Fact]
-    public void QuantityOfPlayers_GivenArgumentMaxQuantity_ShouldNotBeDefaultValue()
+    public void QuantityOfPlayers_GivenArgumentIsMaxQuantity_ShouldNotBeDefaultValue()
     {
         //Given
         UInt16 argumentValue = SimulationConfiguration.MaxQuantityOfPlayers;
@@ -63,7 +63,7 @@ public class SimulationConfigurationTests
     }
 
     [Fact]
-    public void QuantityOfPlayers_GivenArgumentSmallerMinQuantity_ShouldBeDefaultValue()
+    public void QuantityOfPlayers_GivenArgumentSmallerThanMinQuantity_ShouldBeDefaultValue()
     {
         //Given
         UInt16 argumentValue = UInt16.MinValue;
@@ -75,7 +75,7 @@ public class SimulationConfigurationTests
     }
 
     [Fact]
-    public void QuantityOfPlayers_GivenArgumentGreaterMaxQuantity_ShouldBeDefaultValue()
+    public void QuantityOfPlayers_GivenArgumentGreaterThanMaxQuantity_ShouldBeDefaultValue()
     {
         //Given
         UInt16 argumentValue = UInt16.MaxValue;

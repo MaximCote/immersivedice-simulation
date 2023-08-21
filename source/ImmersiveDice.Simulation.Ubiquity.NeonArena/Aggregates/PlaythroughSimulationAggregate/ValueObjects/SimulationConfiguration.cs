@@ -6,7 +6,7 @@ namespace ImmersiveDice.Simulation.Ubiquity.NeonArena.Aggregates.PlaythroughSimu
 ///     Describes the configuration details for the current playthrough
 ///     as well as defining useful constants part of the game rules specification.
 /// </summary>
-public sealed record class SimulationConfiguration : IValueObject
+public readonly struct SimulationConfiguration : IValueObject, IEquatable<SimulationConfiguration>
 {
     /// <value>
     ///     Describes the minimum quantity of players allowed in a playthrough
@@ -48,8 +48,70 @@ public sealed record class SimulationConfiguration : IValueObject
         else
             QuantityOfPlayers = DefaultQuantityOfPlayers;
     }
+    /// <summary>
+    ///     Initialize a new simulation configuration with <see cref="DefaultQuantityOfPlayers"/>.
+    /// </summary>
+    public SimulationConfiguration() 
+    {
+        QuantityOfPlayers = DefaultQuantityOfPlayers;
+    }
+
+    /// <summary>
+    ///     Indicates whether <see langword="this object"/> value <see langword="is equal to"/>
+    ///     the value of another specified <see langword="object"/> of the same type.
+    /// </summary>
     /// <remarks>
-    ///     Required by Entity Framework Core ORM.
+    ///     The objects are compared by the value of their <see cref="QuantityOfPlayers"/>.
     /// </remarks>
-    private SimulationConfiguration() { }
+    /// <param name="otherConfig"></param>
+    /// <returns>
+    ///     <see langword="true"/> if both objects have an equal value; 
+    ///     otherwise, <see langword="false"/>.
+    /// </returns>
+    public bool Equals(SimulationConfiguration otherConfig)
+    {
+        return QuantityOfPlayers.Equals(otherConfig.QuantityOfPlayers);
+    }
+
+    /// <summary>
+    ///     Determines whether <see langword="this is equal to"/> 
+    ///     another specified <see langword="object"/>.
+    /// </summary>
+    /// <remarks>
+    ///     This is an <see langword="override"/>.
+    /// </remarks>
+    /// <param name="otherObject"></param>
+    /// <returns>
+    ///     <see langword="true"/> when <see langword="this is equal to"/> the specified <paramref name="otherObject"/>; 
+    ///     otherwise, <see langword="false"/>.
+    /// </returns>
+    public override bool Equals(object? otherObject)
+    {
+        return otherObject is SimulationConfiguration otherConfig && this.Equals(otherConfig);
+    }
+
+    /// <summary>
+    ///     Returns the hash code for <see langword="this object"/>.
+    /// </summary>
+    /// <remarks>
+    ///     This is an <see langword="override"/>.
+    /// </remarks>
+    /// <returns>
+    ///     A 32-bit signed integer that represents the hash code for <see langword="this object"/> 
+    ///     based on its <see cref="QuantityOfPlayers"/>.
+    /// </returns>
+    public override int GetHashCode()
+    {
+        return QuantityOfPlayers.GetHashCode();
+    }
+
+    public static bool operator ==(SimulationConfiguration left, SimulationConfiguration right)
+    {
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(SimulationConfiguration left, SimulationConfiguration right)
+    {
+        return !(left == right);
+    }
 }

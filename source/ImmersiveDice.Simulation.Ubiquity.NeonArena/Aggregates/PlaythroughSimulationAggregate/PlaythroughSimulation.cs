@@ -60,7 +60,7 @@ public sealed class PlaythroughSimulation : AggregateRoot<PlaythroughSimulationI
     ///     the value of another specified <see langword="object"/> of the same type.
     /// </summary>
     /// <remarks>
-    ///     The objects are compared by their <see cref="Id"/> property.
+    ///     The objects are compared by their <see cref="Id"/>.
     /// </remarks>
     /// <param name="otherPlaythroughSim"></param>
     /// <returns>
