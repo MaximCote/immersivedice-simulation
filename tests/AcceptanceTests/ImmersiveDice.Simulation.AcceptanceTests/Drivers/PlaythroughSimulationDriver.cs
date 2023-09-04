@@ -10,6 +10,7 @@ namespace ImmersiveDice.Simulation.AcceptanceTests.Drivers;
 
 public sealed class PlaythroughSimulationDriver
 {
+    internal UInt16 QuantityOfPlayersChosenByUser { get; set; }
     internal SimulationConfiguration? SimulationConfig { get; set; }
     internal PlaythroughSimulation? Simulation { get; set; }
 }

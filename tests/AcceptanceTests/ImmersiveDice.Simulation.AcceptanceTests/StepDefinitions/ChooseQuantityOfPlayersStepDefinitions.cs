@@ -20,10 +20,10 @@ public sealed class ChooseQuantityOfPlayersStepDefinitions
     }
 
     [Given("the quantity of players chosen by the user is (.*)")]
-    public void GivenTheQuantityOfPlayersIs(UInt16 number)
+    public void GivenTheQuantityOfPlayersIs(UInt16 quantityOfPlayers)
     {
         //arrange (precondition) logic
-        QuantityOfPlayersChosenByUser = number;
+        QuantityOfPlayersChosenByUser = quantityOfPlayers;
 
         _OutputHelper.WriteLine($"the number for the quantity of players is {QuantityOfPlayersChosenByUser}");
     }
@@ -49,7 +49,7 @@ public sealed class ChooseQuantityOfPlayersStepDefinitions
         //assert (verification) logic
         UInt16 quantityOfPlayersInConfig = _PlaythroughSimulationDriver.Simulation?.GetQuantityOfPlayers() ?? 0;
 
-        quantityOfPlayersInConfig.Should().Be(QuantityOfPlayersChosenByUser);
+        quantityOfPlayersInConfig.Should().Be(_PlaythroughSimulationDriver.QuantityOfPlayersChosenByUser);
         quantityOfPlayersInConfig.Should().Be(result);
 
         _OutputHelper.WriteLine($"the quantity of players in the simulation configuration is {result}");

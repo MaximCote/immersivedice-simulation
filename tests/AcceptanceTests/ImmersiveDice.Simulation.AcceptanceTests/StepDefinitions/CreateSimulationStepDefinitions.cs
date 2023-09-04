@@ -9,8 +9,6 @@ namespace ImmersiveDice.Simulation.AcceptanceTests.StepDefinitions;
 public sealed class CreateSimulationStepDefinitions
 {
 
-    internal UInt16 QuantityOfPlayers { get; private set; }
-
     private readonly PlaythroughSimulationDriver _PlaythroughSimulationDriver;
     private readonly ISpecFlowOutputHelper _OutputHelper;
 
@@ -28,23 +26,23 @@ public sealed class CreateSimulationStepDefinitions
     }
 
     [Given(@"the quantity of players in the simulation is (.*)")]
-    public void GivenTheQuantityOfPlayersInTheSimulationIs(UInt16 p0)
+    public void GivenTheQuantityOfPlayersInTheSimulationIs(UInt16 quantityOfPlayers)
     {
         //arrange (precondition) logic
-        QuantityOfPlayers = p0;
+        _PlaythroughSimulationDriver.QuantityOfPlayersChosenByUser = quantityOfPlayers;
 
-        _OutputHelper.WriteLine($"the number for the quantity of players is {QuantityOfPlayers}");
+        _OutputHelper.WriteLine($"the number for the quantity of players is {_PlaythroughSimulationDriver.QuantityOfPlayersChosenByUser}");
     }
 
     [Given(@"the quantity of players is within the (.*) and (.*) quantity allowed by the game rules")]
-    public void GivenTheQuantityOfPlayersIsWithinTheAndQuantityAllowedByTheGameRules(UInt16 p0, UInt16 p1)
+    public void GivenTheQuantityOfPlayersIsWithinTheAndQuantityAllowedByTheGameRules(UInt16 quantityLowerBound, UInt16 quantityUpperBound)
     {
         //arrange (precondition) logic
-        if (QuantityOfPlayers >= p0 && QuantityOfPlayers <= p1)
+        if (_PlaythroughSimulationDriver.QuantityOfPlayersChosenByUser >= quantityLowerBound && _PlaythroughSimulationDriver.QuantityOfPlayersChosenByUser <= quantityUpperBound)
         {
-            _PlaythroughSimulationDriver.SimulationConfig = new SimulationConfiguration(QuantityOfPlayers);
+            _PlaythroughSimulationDriver.SimulationConfig = new SimulationConfiguration(_PlaythroughSimulationDriver.QuantityOfPlayersChosenByUser);
 
-            _OutputHelper.WriteLine($"{QuantityOfPlayers} players is within the allowed range");
+            _OutputHelper.WriteLine($"{_PlaythroughSimulationDriver.QuantityOfPlayersChosenByUser} players is within the allowed range");
         }
         else throw new ArgumentOutOfRangeException();
     }
